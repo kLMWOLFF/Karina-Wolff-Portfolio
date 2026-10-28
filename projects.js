@@ -24,7 +24,7 @@ const categories = {
 const projectsData = [
   {
     id: 'telaria', title: 'TELARIA', category: 'VR/Interactive', type: 'VR Installation', year: '2026', color: '#7c3aed',
-    description: 'Blending ancient ritual and contemporary technology, Telaria is a mixed-reality installation that invites participants to wear a reactive, haptic cape inspired by indigenous spiritual garments. Visitors embody an ancient creature slowly dissolving inside a dense white fog. As they navigate a landscape of fragmented senses, tactile sensations cling to their bodies—pulses, frequencies, murmurs—searching for their path home. Every step activates a choreographed symphony of light, sound, and localized vibration, tasking the user with stitching a fractured entity back together.',
+    description: 'Blending ancient ritual and contemporary technology, Telaria is a mixed-reality installation that invites participants to wear a reactive, haptic cape inspired by indigenous spiritual garments. Visitors embody an ancient creature and explore mysterious environments, led by light, colour, sounds and vibrations. As they navigate a landscape of fragmented senses, tactile sensations cling to their bodies—pulses, frequencies, murmurs—searching for their path home. Every step activates a choreographed symphony of light, sound, and localized vibration, tasking the user with stitching a fractured entity back together.',
     images: ['telaria01.jpg', 'telaria02.jpg', 'telaria03.jpg', 'telaria04.jpg', 'telaria05.jpg', 'telaria06.jpg', 'telaria07.jpg', 'telaria08.jpg', 'telaria09.jpg'],
     videos: ['https://vimeo.com/1238728217?share=copy&fl=sv&fe=ci'],
     client: '',

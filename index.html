@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karina Wolff — Portfolio</title>
+  <meta name="description" content="Portfolio of Karina Wolff, 3D artist and creative technologist: VR, interactive installations, wearables and 3D animation.">
+  <!-- Link preview (WhatsApp, LinkedIn, Slack...). Replace the URL below once your site is live. -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Karina Wolff — Portfolio">
+  <meta property="og:description" content="VR, interactive installations, wearables and 3D animation.">
+  <meta property="og:image" content="https://YOUR-USERNAME.github.io/YOUR-REPO/images/about_me.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Inter:wght@300;400;500;600&family=Playfair+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex min-h-screen flex-col bg-brand-dark font-sans text-gray-200 antialiased selection:bg-gray-700 selection:text-white">
+
+  <!-- Icon sprite -->
+  <svg class="hidden">
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z" fill="currentColor"/></symbol>
+  </svg>
+
+  <header class="fixed inset-x-0 top-0 z-40 border-b border-brand-border/50 bg-brand-dark/85 backdrop-blur-md">
+    <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+      <a href="#" class="group flex flex-col">
+        <span class="font-title text-xl uppercase tracking-widest text-white transition-colors group-hover:text-gray-300">Karina Wolff</span>
+        <span class="text-xs font-light uppercase tracking-wider text-brand-muted">Portfolio</span>
+      </a>
+      <nav class="hidden items-center space-x-8 text-sm uppercase tracking-widest md:flex">
+        <a href="#about" class="py-1 text-brand-muted transition-colors hover:text-white">About</a>
+        <a href="#projects" class="py-1 text-brand-muted transition-colors hover:text-white">Projects</a>
+        <a href="#contact" class="py-1 text-brand-muted transition-colors hover:text-white">Contact</a>
+      </nav>
+      <button id="menu-btn" class="p-2 text-gray-300 hover:text-white md:hidden" aria-label="Toggle menu" aria-expanded="false">
+        <svg class="i h-6 w-6"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+    <nav id="menu" class="hidden flex-col space-y-4 border-b border-brand-border bg-brand-dark/95 px-6 py-6 text-center text-sm uppercase tracking-widest md:hidden">
+      <a href="#about" class="py-2 text-brand-muted hover:text-white">About</a>
+      <a href="#projects" class="py-2 text-brand-muted hover:text-white">Projects</a>
+      <a href="#contact" class="py-2 text-brand-muted hover:text-white">Contact</a>
+    </nav>
+  </header>
+
+  <main class="flex-grow pt-20">
+    <section id="about" class="scroll-mt-20 border-b border-brand-border/40 py-16 md:py-24">
+      <div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-12 lg:gap-16">
+        <div class="relative aspect-[4/5] overflow-hidden rounded-2xl border border-brand-border bg-brand-card shadow-2xl lg:col-span-5">
+          <img src="images/about_me.jpg" alt="Karina Wolff" class="h-full w-full object-cover" onerror="console.warn('Missing image', this.src); this.remove()">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent opacity-60"></div>
+          <span class="absolute bottom-6 left-6 rounded-full border border-brand-border bg-brand-dark/70 px-3 py-1.5 text-xs uppercase tracking-widest text-brand-muted backdrop-blur-md">
+            3D Artist &amp; Creative Technologist
+          </span>
+        </div>
+
+        <div class="flex flex-col justify-center space-y-8 lg:col-span-7">
+          <div>
+            <span class="mb-3 block text-xs font-semibold uppercase tracking-widest text-brand-muted">Biography</span>
+            <p class="text-lg font-light leading-relaxed text-gray-300 md:text-xl">
+              "With a background in Visual Arts and Fashion Design, I love playing with the boundaries between craftsmanship and technology, digital and physical interfaces. For me, the role of media and innovation is to build ways to expand our physical senses into new interaction possibilities."
+            </p>
+          </div>
+          <div class="grid grid-cols-2 gap-4 border-t border-brand-border/60 pt-4 md:grid-cols-3">
+            <div><span id="count" class="block font-serif text-2xl text-white"></span><span class="text-xs uppercase tracking-wider text-brand-muted">Featured Projects</span></div>
+            <div><span class="block font-serif text-2xl text-white">VR / AR</span><span class="text-xs uppercase tracking-wider text-brand-muted">Immersive Media</span></div>
+            <div><span class="block font-serif text-2xl text-white">Robotics</span><span class="text-xs uppercase tracking-wider text-brand-muted">&amp; Wearables</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="scroll-mt-20 py-16 md:py-24">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div>
+            <span class="mb-2 block text-xs font-semibold uppercase tracking-widest text-brand-muted">Selected Works</span>
+            <h2 class="font-serif text-3xl text-white md:text-4xl">Project Showcase</h2>
+          </div>
+          <div id="filters" class="flex flex-wrap gap-2 text-xs uppercase tracking-wider"></div>
+        </div>
+        <div id="grid" class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"></div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="modal" aria-labelledby="m-title" class="m-auto w-[calc(100%-2rem)] max-w-4xl overflow-hidden rounded-2xl border border-brand-border bg-brand-card p-0 text-gray-200 shadow-2xl backdrop:bg-black/90 backdrop:backdrop-blur-md">
+    <form method="dialog" class="absolute right-4 top-4 z-10">
+      <button class="rounded-full bg-brand-subtle p-2 text-brand-muted transition-colors hover:bg-brand-border hover:text-white" aria-label="Close"><svg class="i h-5 w-5"><use href="#i-x"/></svg></button>
+    </form>
+    <div id="modal-body" class="max-h-[90vh] overflow-y-auto"></div>
+  </dialog>
+
+  <footer id="contact" class="scroll-mt-20 border-t border-brand-border/60 bg-brand-card py-12 md:py-16">
+    <div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 px-6 md:grid-cols-2">
+      <div>
+        <h3 class="mb-2 font-title text-2xl tracking-widest text-white">Karina Wolff</h3>
+        <p class="max-w-md text-sm font-light text-brand-muted">Expanding physical senses through media innovation, interactive technology, and digital-physical interface exploration.</p>
+      </div>
+      <div class="flex flex-col space-y-3 text-sm md:items-end">
+        <span class="text-xs uppercase tracking-widest text-brand-muted">Connect &amp; Inquiries</span>
+        <a href="mailto:contact@karinawolff.com" class="font-mono text-white transition-colors hover:text-brand-accent">contact@karinawolff.com</a>
+        <p class="text-xs text-brand-muted">© 2026 Karina Wolff. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="projects.js"></script>
+  <script>
+    const IMG = 'images/';
+    const $ = id => document.getElementById(id);
+    const byId = Object.fromEntries(projectsData.map(p => [p.id, p]));
+    const icon = n => `<svg class="i h-3.5 w-3.5"><use href="#i-${n}"/></svg>`;
+    const imgErr = `onerror="console.warn('Missing image', this.src); this.remove()"`;
+
+    // ---- Video: YouTube / Vimeo embed, local file, or plain link
+    const embedUrl = u => {
+      let m;
+      if (m = u.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/)) return `https://www.youtube-nocookie.com/embed/${m[1]}`;
+      if (m = u.match(/vimeo\.com\/(?:video\/)?(\d+)(?:\/(\w+))?/)) return `https://player.vimeo.com/video/${m[1]}${m[2] ? '?h=' + m[2] : ''}`;
+    };
+    const videoHTML = (u, title) => {
+      const box = 'aspect-video w-full rounded-lg border border-brand-border bg-black';
+      if (/\.(mp4|webm)(\?|$)/i.test(u)) return `<video src="${u}" controls preload="metadata" playsinline class="${box}"></video>`;
+      const e = embedUrl(u);
+      if (e) return `<iframe src="${e}" title="${title}" loading="lazy" allow="fullscreen; picture-in-picture" class="${box}"></iframe>`;
+      return `<a href="${u}" target="_blank" rel="noopener" class="flex items-center gap-2 rounded-lg border border-brand-border bg-brand-subtle px-4 py-3 text-sm text-white hover:border-gray-500">${icon('play')} Watch video ↗</a>`;
+    };
+
+    // ---- Cards
+    const cardHTML = p => `
+      <button type="button" data-id="${p.id}" class="group flex flex-col overflow-hidden rounded-xl border border-brand-border bg-brand-card text-left transition duration-300 hover:-translate-y-1 hover:border-gray-500">
+        <div class="relative aspect-[4/3] overflow-hidden" style="background:linear-gradient(135deg,${p.color}55,#18181b)">
+          ${p.images[0] ? `<img src="${IMG}${p.images[0]}" alt="" loading="lazy" decoding="async" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" ${imgErr}>` : ''}
+          <span class="absolute right-3 top-3 rounded-md border border-brand-border bg-brand-dark/80 px-2.5 py-1 text-[10px] uppercase tracking-widest text-gray-300 backdrop-blur-md">${p.year}</span>
+          ${p.videos.length ? `<span class="absolute left-3 top-3 flex items-center gap-1 rounded-md border border-brand-border bg-brand-dark/80 px-2.5 py-1 text-[10px] uppercase tracking-widest text-gray-300 backdrop-blur-md">${icon('play')} Video</span>` : ''}
+        </div>
+        <div class="flex flex-1 flex-col p-6">
+          <span class="mb-1 text-[11px] font-semibold uppercase tracking-widest text-brand-muted">${p.type}</span>
+          <h3 class="font-serif text-xl text-white transition-colors group-hover:text-gray-300">${p.title}</h3>
+          <p class="mt-2 line-clamp-3 text-sm font-light leading-relaxed text-gray-400">${p.description}</p>
+          <div class="mt-auto flex items-center justify-between border-t border-brand-border/40 pt-4 text-xs text-brand-muted">
+            <span class="uppercase tracking-wider">${categories[p.category]}</span>
+            <span class="flex items-center text-white transition-transform group-hover:translate-x-1">Details&nbsp;${icon('arrow')}</span>
+          </div>
+        </div>
+      </button>`;
+
+    // ---- Modal
+    const modalHTML = p => `
+      <div class="space-y-6 p-6 md:p-8">
+        <div>
+          <div class="mb-2 flex items-center justify-between gap-4 pr-12">
+            <span class="text-xs uppercase tracking-widest text-brand-muted">${p.type} • ${p.year}</span>
+            <span class="hidden rounded-full border border-brand-border bg-brand-subtle px-3 py-1 text-xs uppercase tracking-widest text-gray-300 sm:block">${categories[p.category]}</span>
+          </div>
+          <h2 id="m-title" class="mb-4 font-serif text-2xl text-white md:text-3xl">${p.title}</h2>
+          <p class="text-base font-light leading-relaxed text-gray-300">${p.description}</p>
+        </div>
+        ${p.images.length ? `<div class="columns-1 gap-3 sm:columns-2">${p.images.map((f, i) =>
+          `<img src="${IMG}${f}" alt="${p.title} — image ${i + 1}" loading="lazy" decoding="async" class="mb-3 w-full break-inside-avoid rounded-lg border border-brand-border bg-brand-subtle" ${imgErr}>`).join('')}</div>` : ''}
+        ${p.videos.map(v => videoHTML(v, p.title)).join('')}
+      </div>`;
+
+    const modal = $('modal'), body = $('modal-body');
+    const openProject = id => {
+      if (!byId[id]) return;
+      body.innerHTML = modalHTML(byId[id]);
+      body.scrollTop = 0;
+      if (!modal.open) modal.showModal();
+      history.replaceState(null, '', '#' + id);      // shareable link to one project
+    };
+    modal.addEventListener('close', () => {
+      body.innerHTML = '';                           // also stops any playing video
+      history.replaceState(null, '', location.pathname + location.search);
+    });
+    modal.addEventListener('click', e => e.target === modal && modal.close());
+
+    // ---- Grid + filters
+    const render = f => $('grid').innerHTML = projectsData.filter(p => f === 'all' || p.category === f).map(cardHTML).join('');
+    $('grid').addEventListener('click', e => { const c = e.target.closest('[data-id]'); if (c) openProject(c.dataset.id); });
+
+    $('filters').innerHTML = Object.entries({ all: 'All Works', ...categories }).map(([k, v], i) =>
+      `<button data-filter="${k}" aria-pressed="${i === 0}" class="rounded-full border border-brand-border bg-brand-card px-4 py-2 text-brand-muted transition-all hover:border-gray-500 hover:text-white aria-pressed:border-white aria-pressed:bg-white aria-pressed:font-medium aria-pressed:text-brand-dark">${v}</button>`).join('');
+    $('filters').addEventListener('click', e => {
+      const b = e.target.closest('button'); if (!b) return;
+      document.querySelectorAll('#filters button').forEach(x => x.setAttribute('aria-pressed', x === b));
+      render(b.dataset.filter);
+    });
+
+    // ---- Mobile menu
+    const menu = $('menu'), menuBtn = $('menu-btn');
+    const toggleMenu = open => { menu.classList.toggle('hidden', !open); menu.classList.toggle('flex', open); menuBtn.setAttribute('aria-expanded', open); };
+    menuBtn.addEventListener('click', () => toggleMenu(menu.classList.contains('hidden')));
+    menu.addEventListener('click', e => e.target.closest('a') && toggleMenu(false));
+
+    addEventListener('hashchange', () => openProject(location.hash.slice(1)));
+
+    // ---- Init
+    $('count').textContent = projectsData.length;
+    render('all');
+    openProject(location.hash.slice(1));
+  </script>
+</body>
+</html>

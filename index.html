@@ -161,6 +161,11 @@
           <h2 id="m-title" class="mb-4 font-serif text-2xl text-white md:text-3xl">${p.title}</h2>
           <p class="text-base font-light leading-relaxed text-gray-300">${p.description}</p>
         </div>
+        ${p.client || p.team?.length ? `<dl class="grid gap-6 border-t border-brand-border/60 pt-5 sm:grid-cols-2">
+          ${p.client ? `<div><dt class="mb-1 text-[11px] font-semibold uppercase tracking-widest text-brand-muted">Client / Collaboration</dt><dd class="text-sm text-gray-300">${p.client}</dd></div>` : ''}
+          ${p.team?.length ? `<div><dt class="mb-1 text-[11px] font-semibold uppercase tracking-widest text-brand-muted">Team</dt><dd class="text-sm leading-relaxed text-gray-300">${p.team.join(' · ')}</dd></div>` : ''}
+        </dl>` : ''}
+        ${p.links?.length ? `<div class="flex flex-wrap gap-2">${p.links.map(l => `<a href="${l.url}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-brand-border bg-brand-subtle px-4 py-2 text-xs uppercase tracking-wider text-white transition-colors hover:border-gray-500">${l.label} ${icon('arrow')}</a>`).join('')}</div>` : ''}
         ${p.images.length ? `<div class="columns-1 gap-3 sm:columns-2">${p.images.map((f, i) =>
           `<img src="${IMG}${f}" alt="${p.title} — image ${i + 1}" loading="lazy" decoding="async" class="mb-3 w-full break-inside-avoid rounded-lg border border-brand-border bg-brand-subtle" ${imgErr}>`).join('')}</div>` : ''}
         ${p.videos.map(v => videoHTML(v, p.title)).join('')}

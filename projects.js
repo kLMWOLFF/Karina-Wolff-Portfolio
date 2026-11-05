@@ -28,7 +28,7 @@ const projectsData = [
     images: ['telaria01.jpg', 'telaria02.jpg', 'telaria03.jpg', 'telaria04.jpg', 'telaria05.jpg', 'telaria06.jpg', 'telaria07.jpg', 'telaria08.jpg', 'telaria09.jpg'],
     videos: ['https://vimeo.com/1238728217?share=copy&fl=sv&fe=ci'],
     client: '',
-    team: ['Karina Wolff'],
+    team: ['Personal project'],
     links: [{ label: 'Research paper (TOUCH)', url: 'docs/TOUCH.pdf' }],
   },
   {
@@ -46,7 +46,7 @@ const projectsData = [
     images: ['pests01.jpg', 'pests02.jpg', 'pests03.jpg'],
     videos: [],
     client: 'Hogarth Worldwide',
-    team: ['Project Manager at metaKosmos studio (End-to-End Delivery, Timeline Management & 3D modeling, texturing).'],
+    team: ['metaKosmos studio', '[Project Manager/3D Artist]'],
     links: [],
   },
   {
@@ -82,7 +82,7 @@ const projectsData = [
     images: ['sonar01.jpg', 'sonar02.jpg', 'sonar03.jpg', 'sonar04.jpg', 'sonar05.jpg'],
     videos: ['https://vimeo.com/1238728204?fl=tl&fe=ec'],
     client: 'Sérgio Calado',
-    team: ['Senior 3D Artist at hol studio (3D modeling, texturing and animation)'],
+    team: ['hol studio', '[Senior 3D Artist]'],
     links: [],
   },
   {
@@ -91,7 +91,7 @@ const projectsData = [
     images: ['loreal01.jpg', 'loreal02.jpg', 'loreal03.jpg', 'loreal04.jpg'],
     videos: ['https://vimeo.com/1238728050?fl=tl&fe=ec'],
     client: 'L’Oréal Professionnel Brasil',
-    team: ['Project Manager at metaKosmos studio (End-to-End Delivery, Timeline Management & 3D modeling and animation).'],
+    team: ['metaKosmos studio', '[Project Manager/3D Artist]'],
     links: [],
   },
   {
@@ -105,11 +105,11 @@ const projectsData = [
   },
   {
     id: 'stratasys', title: 'Stratasys Beachwear', category: 'Wearables/Fashion', type: '3D Fashion Challenge', year: '2020', color: '#f97316',
-    description: 'Mentorship and coordination of the 3D Design immersion that invited participants to explore the future of fashion through additive manufacturing. Each design had its own narrative and participants were guided from the 3D modeling, viability study and material selection until 3D printing techniques.',
+    description: 'Mentorship and coordination of the 3D Design immersion that invited 12 participants to explore the future of fashion through additive manufacturing. Each design had its own narrative and participants were guided from the 3D modeling, viability study and material selection until 3D printing techniques.',
     images: ['stratasys01.jpg', 'stratasys02.jpg', 'stratasys03.jpg', 'stratasys04.jpg', 'stratasys05.jpg', 'stratasys06.jpg', 'stratasys07.jpg', 'stratasys08.jpg'],
     videos: ['https://vimeo.com/1239444962?fl=ip&fe=ec','https://vimeo.com/1239444961?fl=ip&fe=ec'],
     client: 'Stratasys & SENAI CETIQT',
-    team: ['Digital Prototyping Consultant at Fashion Lab (Mentorship and coordination of 3D design and 3Dprinting)'],
+    team: ['Fashion Lab & Selected Designers', '[Digital Prototyping Consultant]'],
     links: [],
   },
   {
@@ -118,7 +118,7 @@ const projectsData = [
     images: ['inspira01.jpg', 'inspira02.jpg', 'inspira03.jpeg', 'inspira04.jpg', 'inspira05.jpg', 'inspira06.jpg'],
     videos: ['https://vimeo.com/1239428234?share=copy&fl=sv&fe=ci'],
     client: 'INSPIRA+',
-    team: ['Senior 3D Artist at hol studio (3D modeling, texturing and animation)'],
+    team: ['hol studio', '[Senior 3D Artist]'],
     links: [],
   },
   {
@@ -127,7 +127,7 @@ const projectsData = [
     images: ['mary_very01.png', 'mary_very02.png', 'mary_very03.png', 'mary_very04.png'],
     videos: ['https://vimeo.com/1238728067?fl=tl&fe=ec'],
     client: 'MARY VERY',
-    team: ['Senior 3D Artist at hol studio (3D modeling, texturing and animation)'],
+    team: ['hol studio', '[Senior 3D Artist]'],
     links: [],
   },
   {
@@ -136,7 +136,7 @@ const projectsData = [
     images: ['umbra01.png', 'umbra02.jpg', 'umbra03.jpg', 'umbra04.jpg', 'umbra05.jpg', 'umbra06.jpg', 'umbra07.jpg', 'umbra08.jpg', 'umbra09.jpg', 'umbra10.jpg'],
     videos: [],
     client: '',
-    team: ['Karina Wolff'],
+    team: ['Personal project'],
     links: [{ label: 'Research paper (UMBRA)', url: 'docs/UMBRA.pdf' }],
   },
   {
@@ -145,7 +145,7 @@ const projectsData = [
     images: ['tijucas01.jpg', 'tijucas02.jpg', 'tijucas03.jpg', 'tijucas04.jpg', 'tijucas05.jpg', 'tijucas06.jpg', 'tijucas07.jpg'],
     videos: ['https://vimeo.com/1238728219?fl=tl&fe=ec'],
     client: '',
-    team: ['Karina Wolff'],
+    team: ['Personal project'],
     links: [{ label: 'Research paper (TIJUCAS)', url: 'docs/TIJUCAS.pdf' }],
   },
   {
@@ -181,7 +181,7 @@ const projectsData = [
     images: ['athmos01.png', 'athmos02.png', 'athmos03.png', 'athmos04.png'],
     videos: ['https://vimeo.com/1238727972?fl=tl&fe=ec'],
     client: 'ATHMOS',
-    team: ['Senior 3D Artist at hol studio (3D modeling, texturing and animation)'],
+    team: ['hol studio', '[Senior 3D Artist]'],
     links: [],
   },
   {
@@ -190,7 +190,7 @@ const projectsData = [
     images: ['furia01.png', 'furia02.png', 'furia03.png', 'furia04.png'],
     videos: [],
     client: 'FURIA Esports',
-    team: ['Project Manager at metaKosmos studio (End-to-End Delivery, Timeline Management & 3D modeling).'],
+    team: ['metaKosmos studio', '[Project Manager/3D Artist]'],
     links: [],
   },
   {
@@ -199,7 +199,7 @@ const projectsData = [
     images: ['fuzzee01.jpg', 'fuzzee02.png', 'fuzzee03.jpg', 'fuzzee04.jpg'],
     videos: ['https://vimeo.com/1238727971?fl=tl&fe=ec', 'https://vimeo.com/1238728019?fl=tl&fe=ec'],
     client: 'FUZZEE',
-    team: ['Senior 3D Artist at hol studio (3D modeling, texturing and animation)'],
+    team: ['hol studio', '[Senior 3D Artist]'],
     links: [],
   },
   {
@@ -208,7 +208,7 @@ const projectsData = [
     images: ['celesc01.png', 'celesc02.png', 'celesc03.png', 'celesc04.png', 'celesc05.png', 'celesc06.png'],
     videos: [],
     client: '',
-    team: ['Senior 3D Artist at metaKosmos studio (3D modeling, texturing and animation)'],
+    team: ['metaKosmos studio', '[Senior 3D Artist]'],
     links: [],
   },
   {
@@ -217,7 +217,7 @@ const projectsData = [
     images: ['julia_iamamura01.png', 'julia_iamamura02.png', 'julia_iamamura03.png', 'julia_iamamura04.png'],
     videos: [],
     client: 'Julia Iamamura',
-    team: ['Senior 3D Artist at hol studio (3D modeling and texturing)'],
+    team: ['hol studio', '[Senior 3D Artist]'],
     links: [],
   },
   {
@@ -226,7 +226,7 @@ const projectsData = [
     images: ['octa01.png', 'octa02.png', 'octa03.png', 'octa04.png'],
     videos: ['https://vimeo.com/1238728098?fl=tl&fe=ec'],
     client: 'OCTA FASHION (UDESC)',
-    team: ['3D Artist at hol studio (3D modeling, texturing and animation)'],
+    team: ['hol studio', '[3D Artist]'],
     links: [],
   },
   {
@@ -235,7 +235,7 @@ const projectsData = [
     images: ['redley01.png', 'redley02.png', 'redley03.png', 'redley04.png'],
     videos: ['https://vimeo.com/1239570213?share=copy&fl=sv&fe=ci'],
     client: 'REDLEY',
-    team: ['Senior 3D Artist at metaKosmos studio (3D modeling, texturing)'],
+    team: ['metaKosmos studio', '[Senior 3D Artist]'],
     links: [],
   },
   {
@@ -244,7 +244,7 @@ const projectsData = [
     images: ['seiva01.png', 'seiva02.png', 'seiva03.png', 'seiva04.png', 'seiva05.png', 'seiva06.png'],
     videos: ['https://vimeo.com/1238728188?fl=tl&fe=ec'],
     client: 'SEIVA',
-    team: ['Senior 3D Artist at metaKosmos studio (3D modeling, texturing)'],
+    team: ['metaKosmos studio', '[Project Manager/3D Artist]'],
     links: [],
   },
   {
@@ -253,7 +253,7 @@ const projectsData = [
     images: ['trendview01.png', 'trendview02.png', 'trendview03.png', 'trendview04.png', 'trendview05.png', 'trendview06.png', 'trendview07.png'],
     videos: [],
     client: 'TrendView',
-    team: ['Senior 3D Artist at hol studio (3D modeling, texturing and animation)'],
+    team: ['hol studio', '[Senior3D Artist]'],
     links: [],
   },
 ];

@@ -62,7 +62,7 @@
           <div>
             <span class="mb-3 block text-xs font-semibold uppercase tracking-widest text-brand-muted">Biography</span>
             <p class="text-lg font-light leading-relaxed text-gray-300 md:text-xl">
-              "With a background in Visual Arts and Fashion Design, I love playing with the boundaries between craftsmanship and technology, digital and physical interfaces. For me, the role of media and innovation is to build ways to expand our physical senses into new interaction possibilities."
+              "With a background in Sculpture, Fashion and Interaction Design, I love playing with the boundaries between craftsmanship and technology, digital and physical interfaces."
             </p>
           </div>
           <div class="grid grid-cols-2 gap-4 border-t border-brand-border/60 pt-4 md:grid-cols-3">
@@ -99,11 +99,12 @@
     <div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 px-6 md:grid-cols-2">
       <div>
         <h3 class="mb-2 font-title text-2xl tracking-widest text-white">Karina Wolff</h3>
-        <p class="max-w-md text-sm font-light text-brand-muted">Expanding physical senses through media innovation, interactive technology, and digital-physical interface exploration.</p>
+        <p class="max-w-md text-sm font-light text-brand-muted">Creative Technologist | 3D Artist | Interaction Design</p>
       </div>
       <div class="flex flex-col space-y-3 text-sm md:items-end">
         <span class="text-xs uppercase tracking-widest text-brand-muted">Connect &amp; Inquiries</span>
-        <a href="mailto:contact@karinawolff.com" class="font-mono text-white transition-colors hover:text-brand-accent">contact@karinawolff.com</a>
+        <a href="mailto:wolff90karina@gmail.com" class="font-mono text-white transition-colors hover:text-brand-accent">wolff90karina@gmail.com</a>
+        <a href="docs/CV_Karina Wolff.pdf" class="font-mono text-white transition-colors hover:text-brand-accent" target="_blank" rel="noopener noreferrer">Curriculum Vitae</a>
         <p class="text-xs text-brand-muted">© 2026 Karina Wolff. All rights reserved.</p>
       </div>
     </div>
@@ -118,17 +119,27 @@
     const imgErr = `onerror="console.warn('Missing image', this.src); this.remove()"`;
 
     // ---- Video: YouTube / Vimeo embed, local file, or plain link
+    // To support another site, add one line here: [pattern, function that builds the embed address]
+    const embeds = [
+      [/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/, id => `https://www.youtube-nocookie.com/embed/${id}`],
+      [/vimeo\.com\/(?:video\/)?(\d+)(?:\/(\w+))?/, (id, hash) => `https://player.vimeo.com/video/${id}${hash ? '?h=' + hash : ''}`],
+    ];
     const embedUrl = u => {
-      let m;
-      if (m = u.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/)) return `https://www.youtube-nocookie.com/embed/${m[1]}`;
-      if (m = u.match(/vimeo\.com\/(?:video\/)?(\d+)(?:\/(\w+))?/)) return `https://player.vimeo.com/video/${m[1]}${m[2] ? '?h=' + m[2] : ''}`;
+      for (const [pattern, build] of embeds) {
+        const m = u.match(pattern);
+        if (m) return build(m[1], m[2]);
+      }
     };
+
+    const videoBox = 'aspect-video w-full rounded-lg border border-brand-border bg-black';
+    const fileVideo = u => `<video src="${u}" controls preload="metadata" playsinline class="${videoBox}"></video>`;
+    const frameVideo = (src, title) => `<iframe src="${src}" title="${title}" loading="lazy" allow="fullscreen; picture-in-picture" class="${videoBox}"></iframe>`;
+    const linkVideo = u => `<a href="${u}" target="_blank" rel="noopener" class="flex items-center gap-2 rounded-lg border border-brand-border bg-brand-subtle px-4 py-3 text-sm text-white hover:border-gray-500">${icon('play')} Watch video ↗</a>`;
+
     const videoHTML = (u, title) => {
-      const box = 'aspect-video w-full rounded-lg border border-brand-border bg-black';
-      if (/\.(mp4|webm)(\?|$)/i.test(u)) return `<video src="${u}" controls preload="metadata" playsinline class="${box}"></video>`;
-      const e = embedUrl(u);
-      if (e) return `<iframe src="${e}" title="${title}" loading="lazy" allow="fullscreen; picture-in-picture" class="${box}"></iframe>`;
-      return `<a href="${u}" target="_blank" rel="noopener" class="flex items-center gap-2 rounded-lg border border-brand-border bg-brand-subtle px-4 py-3 text-sm text-white hover:border-gray-500">${icon('play')} Watch video ↗</a>`;
+      if (/\.(mp4|webm)(\?|$)/i.test(u)) return fileVideo(u);
+      const src = embedUrl(u);
+      return src ? frameVideo(src, title) : linkVideo(u);
     };
 
     // ---- Cards
@@ -150,7 +161,24 @@
         </div>
       </button>`;
 
-    // ---- Modal
+    // ---- Modal: one small function per section, so each is easy to read and edit
+    const detail = (name, value) => value
+      ? `<div><dt class="mb-1 text-[11px] font-semibold uppercase tracking-widest text-brand-muted">${name}</dt><dd class="text-sm leading-relaxed text-gray-300">${value}</dd></div>`
+      : '';
+
+    const detailsHTML = ({ client, team = [] }) => {
+      const fields = detail('Client / Collaboration', client) + detail('Team', team.join(' · '));
+      return fields ? `<dl class="grid gap-6 border-t border-brand-border/60 pt-5 sm:grid-cols-2">${fields}</dl>` : '';
+    };
+
+    const linkButton = l => `<a href="${l.url}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-brand-border bg-brand-subtle px-4 py-2 text-xs uppercase tracking-wider text-white transition-colors hover:border-gray-500">${l.label} ${icon('arrow')}</a>`;
+    const linksHTML = ({ links = [] }) => links.length ? `<div class="flex flex-wrap gap-2">${links.map(linkButton).join('')}</div>` : '';
+
+    const galleryImage = (title, file, i) => `<img src="${IMG}${file}" alt="${title} — image ${i + 1}" loading="lazy" decoding="async" class="mb-3 w-full break-inside-avoid rounded-lg border border-brand-border bg-brand-subtle" ${imgErr}>`;
+    const galleryHTML = ({ images = [], title }) => images.length ? `<div class="columns-1 gap-3 sm:columns-2">${images.map((f, i) => galleryImage(title, f, i)).join('')}</div>` : '';
+
+    const videosHTML = ({ videos = [], title }) => videos.map(v => videoHTML(v, title)).join('');
+
     const modalHTML = p => `
       <div class="space-y-6 p-6 md:p-8">
         <div>
@@ -161,14 +189,10 @@
           <h2 id="m-title" class="mb-4 font-serif text-2xl text-white md:text-3xl">${p.title}</h2>
           <p class="text-base font-light leading-relaxed text-gray-300">${p.description}</p>
         </div>
-        ${p.client || p.team?.length ? `<dl class="grid gap-6 border-t border-brand-border/60 pt-5 sm:grid-cols-2">
-          ${p.client ? `<div><dt class="mb-1 text-[11px] font-semibold uppercase tracking-widest text-brand-muted">Client / Collaboration</dt><dd class="text-sm text-gray-300">${p.client}</dd></div>` : ''}
-          ${p.team?.length ? `<div><dt class="mb-1 text-[11px] font-semibold uppercase tracking-widest text-brand-muted">Team</dt><dd class="text-sm leading-relaxed text-gray-300">${p.team.join(' · ')}</dd></div>` : ''}
-        </dl>` : ''}
-        ${p.links?.length ? `<div class="flex flex-wrap gap-2">${p.links.map(l => `<a href="${l.url}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-brand-border bg-brand-subtle px-4 py-2 text-xs uppercase tracking-wider text-white transition-colors hover:border-gray-500">${l.label} ${icon('arrow')}</a>`).join('')}</div>` : ''}
-        ${p.images.length ? `<div class="columns-1 gap-3 sm:columns-2">${p.images.map((f, i) =>
-          `<img src="${IMG}${f}" alt="${p.title} — image ${i + 1}" loading="lazy" decoding="async" class="mb-3 w-full break-inside-avoid rounded-lg border border-brand-border bg-brand-subtle" ${imgErr}>`).join('')}</div>` : ''}
-        ${p.videos.map(v => videoHTML(v, p.title)).join('')}
+        ${detailsHTML(p)}
+        ${linksHTML(p)}
+        ${galleryHTML(p)}
+        ${videosHTML(p)}
       </div>`;
 
     const modal = $('modal'), body = $('modal-body');

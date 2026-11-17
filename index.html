@@ -67,8 +67,8 @@
           </div>
           <div class="grid grid-cols-2 gap-4 border-t border-brand-border/60 pt-4 md:grid-cols-3">
             <div><span id="count" class="block font-serif text-2xl text-white"></span><span class="text-xs uppercase tracking-wider text-brand-muted">Featured Projects</span></div>
-            <div><span class="block font-serif text-2xl text-white">VR / AR</span><span class="text-xs uppercase tracking-wider text-brand-muted">Immersive Media</span></div>
-            <div><span class="block font-serif text-2xl text-white">Robotics</span><span class="text-xs uppercase tracking-wider text-brand-muted">&amp; Wearables</span></div>
+            <div><span class="block font-serif text-2xl text-white">Immersive Media</span><span class="text-xs uppercase tracking-wider text-brand-muted">VR, AR &amp; Installations</span></div>
+            <div><span class="block font-serif text-2xl text-white">3D &amp; Digital Fashion</span><span class="text-xs uppercase tracking-wider text-brand-muted">Animation &amp; Prototyping</span></div>
           </div>
         </div>
       </div>
@@ -155,7 +155,7 @@
           <h3 class="font-serif text-xl text-white transition-colors group-hover:text-gray-300">${p.title}</h3>
           <p class="mt-2 line-clamp-3 text-sm font-light leading-relaxed text-gray-400">${p.description}</p>
           <div class="mt-auto flex items-center justify-between border-t border-brand-border/40 pt-4 text-xs text-brand-muted">
-            <span class="uppercase tracking-wider">${categories[p.category]}</span>
+            <span class="uppercase tracking-wider">${categories[p.category[0]]}</span>
             <span class="flex items-center text-white transition-transform group-hover:translate-x-1">Details&nbsp;${icon('arrow')}</span>
           </div>
         </div>
@@ -184,7 +184,7 @@
         <div>
           <div class="mb-2 flex items-center justify-between gap-4 pr-12">
             <span class="text-xs uppercase tracking-widest text-brand-muted">${p.type} • ${p.year}</span>
-            <span class="hidden rounded-full border border-brand-border bg-brand-subtle px-3 py-1 text-xs uppercase tracking-widest text-gray-300 sm:block">${categories[p.category]}</span>
+            <span class="hidden rounded-full border border-brand-border bg-brand-subtle px-3 py-1 text-xs uppercase tracking-widest text-gray-300 sm:block">${p.category.map(c => categories[c]).join(' · ')}</span>
           </div>
           <h2 id="m-title" class="mb-4 font-serif text-2xl text-white md:text-3xl">${p.title}</h2>
           <p class="text-base font-light leading-relaxed text-gray-300">${p.description}</p>
@@ -210,7 +210,7 @@
     modal.addEventListener('click', e => e.target === modal && modal.close());
 
     // ---- Grid + filters
-    const render = f => $('grid').innerHTML = projectsData.filter(p => f === 'all' || p.category === f).map(cardHTML).join('');
+    const render = f => $('grid').innerHTML = projectsData.filter(p => f === 'all' || p.category.includes(f)).map(cardHTML).join('');
     $('grid').addEventListener('click', e => { const c = e.target.closest('[data-id]'); if (c) openProject(c.dataset.id); });
 
     $('filters').innerHTML = Object.entries({ all: 'All Works', ...categories }).map(([k, v], i) =>
